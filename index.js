@@ -32,7 +32,7 @@ async function run() {
         const equipmentCollection = database.collection('equipment');
 
         app.get('/equipments', async (req, res) => {
-            const cursor = equipmentCollection.findOne();
+            const cursor = equipmentCollection.find();
             const result = await cursor.toArray();
             res.send(result);
         })
