@@ -48,14 +48,14 @@ async function run() {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) }
             const result = await equipmentCollection.findOne(query);
-            // res.send(result);
+            res.send(result);
         })
 
         app.get('/categories/:category', async(req, res) =>{
             const category = req.params.category;
             const filter = { category: category };
             const result = await equipmentCollection.find(filter).toArray(); 
-            res.send(result);
+            // res.send(result);
         })
 
         app.get('/myEquipments/:email', async(req, res) =>{
