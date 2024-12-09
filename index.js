@@ -41,14 +41,14 @@ async function run() {
             const limit = parseInt(req.query.limit) || 6;
             const cursor = equipmentCollection.find().limit(limit); 
             const result = await cursor.toArray(); 
-            // res.send(result);
+            res.send(result);
         });
 
         app.get('/equipments/:id', async (req, res) => {
             const id = req.params.id;
             const query = { _id: new ObjectId(id) }
             const result = await equipmentCollection.findOne(query);
-            res.send(result);
+            // res.send(result);
         })
 
         app.get('/categories/:category', async(req, res) =>{
