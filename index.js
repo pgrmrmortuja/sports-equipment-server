@@ -38,10 +38,10 @@ async function run() {
         })
 
         app.get('/equipments-limited', async (req, res) => {
-            const limit = parseInt(req.query.limit) || 7;
+            const limit = parseInt(req.query.limit) || 6;
             const cursor = equipmentCollection.find().limit(limit); 
             const result = await cursor.toArray(); 
-            res.send(result);
+            // res.send(result);
         });
 
         app.get('/equipments/:id', async (req, res) => {
