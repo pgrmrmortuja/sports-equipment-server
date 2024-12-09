@@ -55,7 +55,7 @@ async function run() {
             const category = req.params.category;
             const filter = { category: category };
             const result = await equipmentCollection.find(filter).toArray(); 
-            // res.send(result);
+            res.send(result);
         })
 
         app.get('/myEquipments/:email', async(req, res) =>{
@@ -72,7 +72,7 @@ async function run() {
             console.log(newEquipment);
 
             const result = await equipmentCollection.insertOne(newEquipment);
-            res.send(result);
+            // res.send(result);
         })
 
         app.put('/equipments/:id', async (req, res) => {
