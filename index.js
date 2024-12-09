@@ -96,7 +96,7 @@ async function run() {
             }
 
             const result = await equipmentCollection.updateOne(filter, equipment, options);
-            // res.send(result);
+            res.send(result);
         })
 
         app.delete('/equipments/:id', async(req, res) =>{
